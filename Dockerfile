@@ -10,8 +10,9 @@ RUN apt-get update && \
 # pip upgrade မလုပ်ဘဲ တိုက်ရိုက် install လုပ်ပါ
 RUN python3 -m pip install --no-cache-dir pyyaml
 
-COPY feed.py /app/feed.py
-COPY entrypoint.sh /app/entrypoint.sh
+COPY feed.py /usr/bin/feed.py
+COPY entrypoint.sh /entrypoint.sh
+
 
 WORKDIR /app
 ENTRYPOINT ["/app/entrypoint.sh"]
