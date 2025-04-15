@@ -11,8 +11,7 @@ RUN apt-get update && \
 RUN python3 -m pip install --no-cache-dir pyyaml
 
 COPY feed.py /usr/bin/feed.py
+
 COPY entrypoint.sh /entrypoint.sh
 
-
-WORKDIR /app
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
